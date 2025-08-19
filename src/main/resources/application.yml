@@ -35,7 +35,7 @@ spring:
   jaeminai:
     enabled: true
     model: gemini-1.5-flash
-    api-key: AIzaSyCLqpliUp62Mdkv_yAz7Bbl3pyNp-zS038
+    api-key:
     timeout-ms: 4000
 
 logging:
