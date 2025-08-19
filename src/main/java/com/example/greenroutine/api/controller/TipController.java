@@ -44,4 +44,13 @@ public class TipController {
     ) {
         return ResponseEntity.ok(metricsService.getDailyLine(userId, date));
     }
+    @PostMapping("/preference/tips")
+    public ResponseEntity<Map<String, List<String>>> savePrefAndGetTips(
+            @RequestBody @Valid SavePreferenceRequest req,
+            @RequestParam(defaultValue = "2") int elecCount,
+            @RequestParam(defaultValue = "2") int gasCount
+    ){
+        tipService.savePreference(req);
+        return ResponseEntity.ok(tipService.getTips(req.getUserId(), elecCount,gasCount));
+    }
 }
