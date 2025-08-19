@@ -24,16 +24,9 @@ public class TipService {
         UserPreference pref = userPreferenceRepository.findByUserId(req.getUserId())
                 .orElse(UserPreference.builder().userId(req.getUserId()).build());
 
-
-        if (req.getHousingType() != null) {
-            pref.setHousingType(req.getHousingType());
-        }
-        if (req.getHasDoubleDoor() != null) {
-            pref.setHasDoubleDoor(req.getHasDoubleDoor());
-        }
-        if (req.getWindowType() != null) {
-            pref.setWindowType(req.getWindowType());
-        }
+        if (req.getHousingType() != null) pref.setHousingType(req.getHousingType());
+        if (req.getHasDoubleDoor() != null) pref.setHasDoubleDoor(req.getHasDoubleDoor());
+        if (req.getWindowType() != null) pref.setWindowType(req.getWindowType());
 
         userPreferenceRepository.save(pref);
     }
