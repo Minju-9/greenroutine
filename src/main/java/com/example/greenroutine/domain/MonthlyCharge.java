@@ -23,7 +23,7 @@ public class MonthlyCharge {
     @Column(nullable = false, length = 7)
     private String ym;
 
-    @Column(name = "day_value")
+    @Column(name = "day")
     private Integer day;
 
     @Column(nullable = false)
